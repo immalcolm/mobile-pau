@@ -1,4 +1,4 @@
-package module1.mypackage;
+package module1.examples;
 //working with packages
 import module1.shapes.CircleClass;
 import module1.shapes.TriangleClass;

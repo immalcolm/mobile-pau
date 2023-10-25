@@ -1,4 +1,4 @@
-package module1.mypackage;
+package module1.examples;
 
 public class PrimitiveDataType {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package module1.mypackage;
+package module1.examples;
 import java.util.Random;
 
 public class RandomNum {
