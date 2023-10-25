@@ -1,9 +1,11 @@
 package module1;
-
 // import the ArrayList class from java.util package
 // specific import
 // Generic import >> import java.util.*;
 // Reading: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html
+// to run in terminal: 
+// javac SimpleArrayList.java
+// java module1.SimpleArrayList
 import java.util.ArrayList; 
 
 public class SimpleArrayList {
