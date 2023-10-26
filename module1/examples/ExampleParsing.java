@@ -32,6 +32,7 @@ public class ExampleParsing {
 - Can throw a NumberFormatException if the string doesn't represent a valid integer.
 
 ## (int):
+(int)8323.8392389
 Casts one primitive type to another (e.g., double to int).
 Can result in data loss but doesn't throw exceptions for invalid conversions.
 In essence, you'd use parseInt when you have a string that you want to convert to an integer, and you'd use (int) when you have a value of one primitive type that you want to cast to the int type.
