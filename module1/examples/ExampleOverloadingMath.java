@@ -6,6 +6,7 @@ public class ExampleOverloadingMath {
         return a + b;
     }
 
+    //Overloading addNum
     double addNum(double a, double b) {
         return a + b;
     }

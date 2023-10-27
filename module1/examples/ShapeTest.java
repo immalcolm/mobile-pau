@@ -10,7 +10,7 @@ public class ShapeTest {
         TriangleClass triangle = new TriangleClass();
         System.out.println("Circle: " + circle);
         System.out.println("Triangle: " + triangle);
-
+        
         circle.printType();
         triangle.printType();
     }
