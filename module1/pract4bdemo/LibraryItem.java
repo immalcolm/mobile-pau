@@ -22,6 +22,4 @@ public abstract class LibraryItem {
     public String toString(){
         return String.format("%6d | %-22s", this.itemID, this.title);
     };
-
-    
 }

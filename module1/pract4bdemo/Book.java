@@ -10,7 +10,8 @@ public class Book extends LibraryItem implements Finable {
     private double fineRate;
     private boolean availability;
     final int borrowDays = 21;
-
+    //empty constructor not used
+    
     public Book(int itemid, String title,
             String author, double fineRate) {
         super(itemid, title);
@@ -35,11 +36,12 @@ public class Book extends LibraryItem implements Finable {
     // set not available
     // set book borrow date
     // set book due date
+    // timestamps possible in future . gives a long number
+    //in nosql database >> dates are typically stored stored as long numbers (timestamp)
     public void checkout(LocalDate borrowDate) {
         availability = false;
-        this.borrowDate = borrowDate;
+        this.borrowDate = borrowDate; 
         this.dueDate = borrowDate.plusDays(borrowDays);
-
     }
 
     @Override
@@ -49,6 +51,7 @@ public class Book extends LibraryItem implements Finable {
     public double checkin(LocalDate returnDate) {
         double fines = 0;
         if (returnDate.isAfter(dueDate)) {
+            //in SQL we can also check days inbetween 
             int daysLate = (int) ChronoUnit.DAYS.between(dueDate, returnDate);
             fines = calculateFine(daysLate);
         }

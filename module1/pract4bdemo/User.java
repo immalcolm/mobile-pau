@@ -15,6 +15,9 @@ public class User {
         this.name = name;
     }
 
+    //option 2
+    //display all books 
+    //if no books >> show sth
     public void displayBorrowedBooks() {
         if ( !borrowedItems.isEmpty()) {
             System.out.println(String.format("Below are the borrowed items by %s", this.name));
@@ -24,7 +27,7 @@ public class User {
             System.out.println(repeatedChar);
 
             for (LibraryItem item : borrowedItems) {
-                System.out.println(item);
+                System.out.println(item); //we insert Book objects inside . Then tap on book toString
             }
         } else {
             System.out.println(">> No records of borrowing");
@@ -48,6 +51,10 @@ public class User {
 
     }
 
+    //option 4 
+    //check in and get fines 
+    //if fined >> add to fine charges
+    //remove book from user's booklist 
     public void returnBook(Book book, LocalDate returnDate) {
         if (borrowedItems.contains(book)) {
             double charge = book.checkin(returnDate);
@@ -69,9 +76,8 @@ public class User {
         double tempFines = this.fines;
         this.fines = 0;
         System.out.println(String.format(">> Payment of $%.2f successful. You can continue borrowing items from the library.", tempFines));
-
     }
-
+ 
     @Override
     public String toString() {
         return String.format("%6d | %-22s", this.userID, this.name);

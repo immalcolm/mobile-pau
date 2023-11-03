@@ -42,6 +42,7 @@ public class AbstractionPractice {
                     "Enter option: ";
             System.out.print(menu);
             int option = scanner.nextInt();
+            // can use this too if you want to read a string
             // String userInput = scanner.nextLine();
             Book foundBook = null;
             switch (option) {
@@ -105,12 +106,14 @@ public class AbstractionPractice {
         } while (appRun);
     }
 
+    //option 1
     public static void displayAllBooks(ArrayList<Book> bList) {
-        System.out.println(String.format("%-6s | %-22s | %-22s | %-12s", "ItemID", "Title", "Author", "Due Date"));
+        System.out.println(String.format("%-6s | %-22s | %-22s | %-12s", 
+        "ItemID", "Title", "Author", "Due Date"));
         String repeatedChar = "-".repeat(69);
         System.out.println(repeatedChar);
         for (Book book : bList) {
-            System.out.println(book.toString());
+            System.out.println(book.toString()); //the overriding is important here to display in the format
         }
     }
 
