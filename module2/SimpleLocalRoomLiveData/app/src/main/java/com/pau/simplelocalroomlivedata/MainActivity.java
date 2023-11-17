@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity{
         //get some UI
         EditText edittext_adduser = (EditText) findViewById(R.id.edittext_user);
         Button button_adduser = (Button)findViewById(R.id.button_adduser);
-
+        TextView textview_empty_message = (TextView)findViewById(R.id.textview_empty_message);
 
         //initialize the AppDatabase
         UserDatabase db = Room.databaseBuilder(getApplicationContext(),
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity{
         userDao = db.userDao();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        adapter = new UserAdapter(userDao);
+        adapter = new UserAdapter(userDao, recyclerView, textview_empty_message);
         recyclerView.setAdapter(adapter);
         //determine our layout style
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

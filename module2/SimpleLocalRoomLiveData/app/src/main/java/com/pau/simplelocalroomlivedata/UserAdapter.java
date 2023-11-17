@@ -21,9 +21,27 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     private List<User> users = new ArrayList<>();
     private UserDao userDao;
 
+    private View recyclerView;
+    private View emptyView;
+
     //constructor that takes in the UserDao meaning we have access to the database
-    public UserAdapter(UserDao noteDao) {
+    public UserAdapter(UserDao noteDao, View recyclerView, View emptyView) {
+
         this.userDao = noteDao;
+        this.recyclerView = recyclerView;
+        this.emptyView = emptyView;
+        showEmptyView();
+    }
+
+    private void showEmptyView(){
+        if(users.size() == 0){
+            recyclerView.setVisibility(View.GONE);
+            emptyView.setVisibility(View.VISIBLE);
+        }else{
+            recyclerView.setVisibility(View.VISIBLE);
+            emptyView.setVisibility(View.GONE);
+        }
+
     }
 
     //
@@ -65,6 +83,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     public void setUsers(List<User> users) {
         this.users = users;
+        showEmptyView();
         notifyDataSetChanged();//@TODO important to have this
     }
 
