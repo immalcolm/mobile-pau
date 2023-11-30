@@ -53,15 +53,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TicTacToeGame() {
-
+    //METHOD 1: Explained
     //Using mutableStateOf you are creating an observable object. So, the recomposition will
     // happen just if you assign a new instance to this state. Let's say that you want that
     // recomposition happens after add a new item to the list. In this case, you need to create a
-    // copy of this list, add the elemento to this copied list, and then assign the copied list to
+    // copy of this list, add the elements to this copied list, and then assign the copied list to
     // the state.
 
+    //METHOD 2: Explained
     //The mutableStateListOf creates an observable list. All operations you've done in this list
     // (add, remove, update) will cause a recomposition.
+
 
     // State to track the state of each square in the Tic Tac Toe grid
     //METHOD 1: using mutableStateof()
