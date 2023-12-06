@@ -76,14 +76,14 @@ fun TimerScreen() {
         // Button to start/stop the timer
         Button(
             onClick = {
-                timerRunning = !timerRunning
+                timerRunning = !timerRunning //invert the status of the timer
                 if (timerRunning) {
                     // Start the timer
-                    runTimer(context, timer)
+                    runTimer(context, timer) //run the timer
                 } else {
                     // Stop the timer
-                    timer.cancel()
-                    timer = Timer()
+                    timer.cancel() //"killed"
+                    timer = Timer() //re-init our timer
                 }
             }
         ) {
