@@ -56,6 +56,8 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LazyListWithAlertDialogPage(tasks: MutableList<String>) {
+
+
     // State to track whether the AlertDialog is shown
     var showDialog by remember { mutableStateOf(false) }
 
