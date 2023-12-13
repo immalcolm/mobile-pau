@@ -13,9 +13,10 @@ import kotlinx.coroutines.flow.map
 class StoreBackgroundColour(private val context: Context) {
 
     // to make sure there is only one instance
+    //base setup
     companion object {
         private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("BackgroundColour")
-        val BACKGROUND_COLOUR_KEY = stringPreferencesKey("background_colour")
+        val BACKGROUND_COLOUR_KEY = stringPreferencesKey("background_colour") //identifiers that I want
         val IS_SWITCH_ON_KEY = booleanPreferencesKey("is_switch_on")
     }
 

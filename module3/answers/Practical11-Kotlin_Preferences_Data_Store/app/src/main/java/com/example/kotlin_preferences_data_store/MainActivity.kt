@@ -53,7 +53,7 @@ fun PreferencesScreen() {
 
     var bgColour = if (savedSwitchStatus) Color(
         android.graphics.Color.parseColor(
-            savedBackgroundColour!!
+            savedBackgroundColour
         )
     ) else Color.White
 
